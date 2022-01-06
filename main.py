@@ -1,4 +1,4 @@
-from random import randrange
+import random
 from datetime import timedelta, datetime
 
 start = datetime(2019,1,1,0,0,0).replace(microsecond=0)
@@ -11,7 +11,7 @@ def random_date(start, end):
     """
     delta = end - start
     int_delta = (delta.days * 24 * 60 * 60) + delta.seconds
-    random_second = randrange(int_delta)
+    random_second = random.randrange(int_delta)
     return start + timedelta(seconds=random_second)
 
 random_dates = random_date(start, end).isoformat() #https://stackoverflow.com/a/65749164
